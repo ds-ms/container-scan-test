@@ -31,4 +31,5 @@ jobs:
       name: Scanning image
       with:
         image-name: ajacr1.azurecr.io/my-go-sample
-        
+        username: ajAcr1
+        password: ${{ secrets.DOCKER_PASSWORD }}
