@@ -1,6 +1,6 @@
 general:
   commonVulnerabilities:
-  - CVE-2011-3374
+   CVE-2011-3374
   - CVE-2019-18276
   - TEMP-0841856-B18BAF
   - CVE-2017-13716
