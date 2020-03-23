@@ -25,7 +25,7 @@ jobs:
       run: |
         docker build . --tag ajacr1.azurecr.io/my-go-sample
         docker push ajacr1.azurecr.io/my-go-sample
-        docker rmi $(docker images -a -q)
+        docker rmi ajacr1.azurecr.io/my-go-sample
     
     - uses: shigupt202/local-container-scan@releases/v1
       name: Scanning image
