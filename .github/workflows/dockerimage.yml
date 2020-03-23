@@ -33,3 +33,5 @@ jobs:
         image-name: ajacr1.azurecr.io/my-go-sample
         username: ajAcr1
         password: ${{ secrets.DOCKER_PASSWORD }}
+    
+    - run: printenv
