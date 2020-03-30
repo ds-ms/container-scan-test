@@ -27,7 +27,7 @@ jobs:
         docker push ajacr1.azurecr.io/my-go-sample
         docker rmi ajacr1.azurecr.io/my-go-sample
     
-    - uses: azure/container-scan@fixing-node-modules
+    - uses: azure/container-scan@from-master
       name: Scanning image
       with:
         image-name: ajacr1.azurecr.io/my-go-sample
