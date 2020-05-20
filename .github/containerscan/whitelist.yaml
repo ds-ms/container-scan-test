@@ -11,8 +11,7 @@ general:
   - CVE-2019-19815
   - CVE-2019-19816
   - CVE-2020-12464
-  - CVE-2011-3374
-  
+  - CVE-2011-3374  
   bestPracticeVulnerabilities:
   - CIS-DI-0001
   - CIS-DI-0005
