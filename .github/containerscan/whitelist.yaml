@@ -505,5 +505,5 @@ general:
   - CVE-2020-12464
 
   bestPracticeVulnerabilities:
-    - CIS-DI-0001
-    - CIS-DI-0005
+  - CIS-DI-0001
+  - CIS-DI-0005
