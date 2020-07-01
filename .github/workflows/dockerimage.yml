@@ -23,15 +23,14 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --tag ajacr1.azurecr.io/my-go-sample
-        docker push ajacr1.azurecr.io/my-go-sample
-        docker rmi ajacr1.azurecr.io/my-go-sample
     
     - uses: azure/container-scan@v0
-      name: Scanning image
+      name: imagescan
+      id: imagescan
       with:
         image-name: ajacr1.azurecr.io/my-go-sample
         username: ajAcr1
         password: ${{ secrets.DOCKER_PASSWORD }}
         run-quality-checks: false
     
-    - run: printenv
+    - run: cat ${{ steps.imagescan.scan-report-path }}
