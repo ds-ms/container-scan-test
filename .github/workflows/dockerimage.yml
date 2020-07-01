@@ -27,6 +27,7 @@ jobs:
     - uses: azure/container-scan@v0
       name: imagescan
       id: imagescan
+      continue-on-error: true
       with:
         image-name: ajacr1.azurecr.io/my-go-sample
         username: ajAcr1
