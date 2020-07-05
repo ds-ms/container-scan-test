@@ -24,7 +24,7 @@ jobs:
       run: |
         docker build . --tag ajacr1.azurecr.io/my-go-sample
     
-    - uses: azure/container-scan@v0
+    - uses: ds-ms/container-scan@releases/v0
       name: imagescan
       id: imagescan
       continue-on-error: true
@@ -34,4 +34,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         run-quality-checks: false
     
-    - run: cat ${{ steps.imagescan.output.scan-report-path }}
+    - run: cat ${{ steps.imagescan.outputs.sarif-file-path }}
