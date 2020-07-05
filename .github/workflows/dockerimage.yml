@@ -35,3 +35,7 @@ jobs:
         run-quality-checks: false
     
     - run: cat ${{ steps.imagescan.outputs.sarif-file-path }}
+    
+    - uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file:  ${{ steps.imagescan.outputs.sarif-file-path }}
