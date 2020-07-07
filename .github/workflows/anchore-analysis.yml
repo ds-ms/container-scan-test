@@ -8,7 +8,8 @@
 
 name: Anchore Container Scan
 
-on: push
+on: 
+  repository_dispatch:
 
 jobs:
   Anchore-Build-Scan:
