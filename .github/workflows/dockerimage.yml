@@ -34,8 +34,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         run-quality-checks: false
     
-    - name: Upload artifact
-      uses: actions/upload-artifact@v1
+    - name: Upload Container Scan Report
+      uses: github/codeql-action/upload-sarif@v1
       with:
-        name: container-scan-report
-        path: ${{ steps.imagescan.outputs.sarif-file-path }}
+        sarif_file: ${{ steps.imagescan.outputs.sarif-file-path }}
