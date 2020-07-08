@@ -5,5 +5,4 @@
 This is a sample GO Lang web application that you can deploy to Azure.
 Test
 
-
-Trigger again
+Trigger again and again
