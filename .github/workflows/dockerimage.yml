@@ -45,6 +45,6 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         web-app-name: anuragContainerWebApp
         resource-group: anuragContainerWebApp-rg
-        upload-sarif:  ${{ steps.imagescan.outputs.sarif-file-path }}
+#         upload-sarif:  ${{ steps.imagescan.outputs.sarif-file-path }}
         assessment-title: Upload SARIF
      
