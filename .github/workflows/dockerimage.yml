@@ -38,3 +38,13 @@ jobs:
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: ${{ steps.imagescan.outputs.sarif-file-path }}
+    
+    - name: Asessment
+      uses: ds-ms/asc-assessment@master
+      with: 
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        cluster-name: ds-ms
+        resource-group: ds-ms
+        upload-sarif:  ${{ steps.imagescan.outputs.sarif-file-path }}
+        assessment-title: Upload SARIF
+     
