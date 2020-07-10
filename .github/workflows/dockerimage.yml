@@ -43,8 +43,8 @@ jobs:
       uses: ds-ms/asc-assessment@master
       with: 
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        cluster-name: ds-ms
-        resource-group: ds-ms
+        web-app-name: anuragContainerWebApp
+        resource-group: anuragContainerWebApp-rg
         upload-sarif:  ${{ steps.imagescan.outputs.sarif-file-path }}
         assessment-title: Upload SARIF
      
