@@ -23,28 +23,5 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --tag ajacr1.azurecr.io/my-go-sample
+        docker push ajacr1.azurecr.io/my-go-sample
     
-    - uses: ds-ms/container-scan@releases/v0
-      name: imagescan
-      id: imagescan
-      continue-on-error: true
-      with:
-        image-name: ajacr1.azurecr.io/my-go-sample
-        username: ajAcr1
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        run-quality-checks: false
-    
-    - name: Upload Container Scan Report
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: ${{ steps.imagescan.outputs.sarif-file-path }}
-    
-    - name: Asessment
-      uses: ds-ms/asc-assessment@master
-      with: 
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-        web-app-name: anuragContainerWebApp
-        resource-group: anuragContainerWebApp-rg
-#         upload-sarif:  ${{ steps.imagescan.outputs.sarif-file-path }}
-        assessment-title: Upload SARIF
-     
