@@ -6,8 +6,7 @@ stages:
 - stage: Environment
   jobs:
   - deployment: DeployPPE
-    environment: TauhidEnv
-    pool: 'Default'
+    environment: ambika-env
     strategy:
       runOnce:
         deploy:
